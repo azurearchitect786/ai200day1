@@ -1,0 +1,7 @@
+acr-task.yml
+version: v1.1.0
+steps:
+  # Build using the native $Commit environment shortcut alias
+  - build: -t $Registry/chatapp:$Commit -f Dockerfile .
+  # Push the generated build artifact to your cloud registry
+  - push: ["$Registry/chatapp:$Commit"]
